@@ -1,0 +1,10 @@
+.gca-overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background: radial-gradient(black, transparent);
+    z-index: 9999;
+}
