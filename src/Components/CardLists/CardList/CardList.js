@@ -8,7 +8,7 @@ class CardList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userList: this.props.userList,
+      currentUserName: this.props.userList,
       userDetails: [],
       currentUser: {},
       showPopup: false,
@@ -17,8 +17,8 @@ class CardList extends Component {
 
 
   static getDerivedStateFromProps(nextProps, prevState){
-    if(nextProps.userList!==prevState.userList){
-      return { userList: nextProps.userList};
+    if(nextProps.userList!==prevState.currentUserName){
+      return { currentUserName: nextProps.userList};
    }
    else return null;
  }
@@ -55,7 +55,7 @@ class CardList extends Component {
   render() {
     return (
       <div>
-        {this.state.userList && this.state.userList.length ? (
+        {this.state.currentUserName.userList && this.state.currentUserName.userList.length ? (
           <div className="gca-card_list_wrapper">
             <span>
               <DropDown
@@ -64,7 +64,7 @@ class CardList extends Component {
               />
             </span>
             <div className="gca-card_list">
-              {this.state.userList.map((user) => (
+              {this.state.currentUserName.userList.map((user) => (
                 <Card
                   user={user}
                   key={user.id}

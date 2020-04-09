@@ -1,27 +1,32 @@
 import React, { Component } from "react";
 import SearchBox from "./Components/SearchBox/SearchBox";
 import CardList from "./Components/CardLists/CardList/CardList";
-import Loader from './Components/Common/Loader/Loader';
-import Empty from './Components/Empty/Empty';
+import Loader from "./Components/Common/Loader/Loader";
+import Empty from "./Components/Empty/Empty";
 
- class Main extends Component {
+class Main extends Component {
   constructor() {
     super();
     this.state = {
       userList: {},
       currentUserName: [],
-      showLoader : false,
+      showLoader: false,
       showEmpty: false,
       sortItems: {
         title: "Sort By",
+        currentSortId: 0,
         listItems: [
           {
-            name: "High to Low Score",
+            name: "Relevance",
             id: 0,
           },
           {
-            name: "Low to High Score",
+            name: "High to Low Score",
             id: 1,
+          },
+          {
+            name: "Low to High Score",
+            id: 2,
           },
         ],
       },
@@ -30,33 +35,31 @@ import Empty from './Components/Empty/Empty';
 
   fetchAllUsers = async (userName) => {
     try {
-      this.setState({showLoader: true , showEmpty: false})
+      this.setState({ showLoader: true, showEmpty: false });
       let response = await fetch(
         `https://api.github.com/search/users?q=${userName}`
       );
       let data = await response.json();
       let showEmpty = false;
-      if(!data.items.length){
+      if (!data.items.length) {
         showEmpty = true;
         this.setState(() => ({
-            showLoader: false,
-            showEmpty: showEmpty
-          }));
-          return
-      }
-      else{
+          showLoader: false,
+          showEmpty: showEmpty,
+        }));
+        return;
+      } else {
         this.setState((prevState) => ({
-            userList: { [userName]: data.items, ...prevState.userList },
-            showLoader: false,
-            showEmpty: showEmpty
-          }));
+          userList: { [userName]: data.items, ...prevState.userList },
+          showLoader: false,
+          showEmpty: showEmpty,
+        }));
       }
-      
     } catch {
-        this.setState(() => ({
-            showLoader: false,
-            showEmpty: false
-          }));
+      this.setState(() => ({
+        showLoader: false,
+        showEmpty: false,
+      }));
     }
   };
 
@@ -65,23 +68,51 @@ import Empty from './Components/Empty/Empty';
     if (!userList) {
       await this.fetchAllUsers(userName);
       userList = this.state.userList[userName];
-      this.setState({ currentUserName: userList });
+      this.setState({
+        currentUserName: {
+          name: userName,
+          userList,
+        },
+      });
       return;
     } else {
-      this.setState({ currentUserName: userList , showEmpty: false });
+      this.setState({
+        currentUserName: {
+          name: userName,
+          userList,
+        },
+        showEmpty: false,
+      });
     }
   };
 
-  sortHandler = (id) => {
-    let currentUser = [...this.state.currentUserName];
-    if (id === 0) {
-      // 0 means high to low
-      currentUser.sort((a, b) => b.id - a.id);
-      this.setState({ currentUserName: currentUser });
-      return;
+  sortHandler = (id = 0) => {
+    let currentUser =  JSON.parse(JSON.stringify(this.state.currentUserName));
+    switch (id) {
+      case 1:
+        currentUser.userList.sort((a, b) => b.id - a.id);
+        this.setState((prevState) => ({
+          currentUserName: currentUser,
+          sortItems: { ...prevState.sortItems, currentSortId: id },
+        }));
+        break;
+      case 2:
+        currentUser.userList.sort((a, b) => a.id - b.id);
+        this.setState((prevState) => ({
+          currentUserName: currentUser,
+          sortItems: { ...prevState.sortItems, currentSortId: id },
+        }));
+        break;
+      default:
+        this.setState((prevState) => ({
+          currentUserName: {
+            name: currentUser.name,
+            userList: [ ...this.state.userList[currentUser.name] ],
+          },
+          sortItems: { ...prevState.sortItems, currentSortId: id },
+        }));
+        break;
     }
-    currentUser.sort((a, b) => a.id - b.id);
-    this.setState({ currentUserName: currentUser });
   };
 
   render() {
@@ -89,17 +120,20 @@ import Empty from './Components/Empty/Empty';
       <div>
         <SearchBox setCurrentUserList={this.setCurrentUserList} />
 
-        {this.state.showLoader ? <Loader/>: ''}
-        {this.state.currentUserName && !this.state.showLoader && this.state.currentUserName.length > 0 ? (
+        {this.state.showLoader ? <Loader /> : ""}
+        {this.state.currentUserName &&
+        !this.state.showLoader &&
+        this.state.currentUserName.userList &&
+        this.state.currentUserName.userList.length > 0 ? (
           <CardList
             userList={this.state.currentUserName}
             sortHandler={this.sortHandler}
             sortItems={this.state.sortItems}
           />
         ) : (
-         ''
+          ""
         )}
-        {this.state.showEmpty ? <Empty/> : ''}
+        {this.state.showEmpty ? <Empty /> : ""}
       </div>
     );
   }
