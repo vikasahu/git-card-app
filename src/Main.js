@@ -11,9 +11,14 @@ export class Main extends Component {
     }
 
     fetchAllUsers = async(userName)=>{
-        let response = await fetch(`https://api.github.com/search/users?q=${userName}`);
-        let data = await response.json()
-        this.setState({userList: data.items});
+        try{
+            let response = await fetch(`https://api.github.com/search/users?q=${userName}`);
+            let data = await response.json();
+            this.setState({userList: data.items});
+        }
+        catch{
+
+        }
     }
 
 
@@ -22,7 +27,7 @@ export class Main extends Component {
         return (
             <div>
             <SearchBox fetchAllUsers={this.fetchAllUsers} />
-            <CardList userList={this.state.userList}/>
+            {this.state.userList.length>0 ? <CardList userList={this.state.userList}/> : ''}
             </div>
         )
     }

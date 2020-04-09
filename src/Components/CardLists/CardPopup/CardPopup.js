@@ -7,9 +7,11 @@ export class CardPopup extends Component {
         return (
             <div>
                 <div className="gca-overlay"></div>
-                <div>
+                <div className="gca-popup">
                     { public_repos }
                     {created_at}
+
+                    <div onClick={()=>this.props.handlePopup(false)}>X</div>
                 </div>
             </div>
         )

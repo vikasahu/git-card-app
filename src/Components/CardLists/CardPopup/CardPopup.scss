@@ -5,6 +5,21 @@
     height: 100%;
     width: 100%;
     margin: auto;
-    background: radial-gradient(black, transparent);
-    z-index: 9999;
+    background: radial-gradient(black, #000000a3);
+    z-index: 999;
+}
+
+
+.gca-popup{
+    position: fixed;
+    width: 50%;
+    height: 50%;
+    min-width: 400px;
+    min-height: 400px;
+    top: 0;
+    bottom: 0;
+    background: red;
+    margin: auto;
+    z-index: 99999;
+
 }
