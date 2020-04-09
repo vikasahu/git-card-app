@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Card.scss'
 
-export class Card extends Component {
+ class Card extends Component {
 
     render() {
         let {avatar_url,login,score,id} = this.props.user;

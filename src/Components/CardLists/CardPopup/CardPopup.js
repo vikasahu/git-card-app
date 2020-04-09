@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './CardPopup.scss'
 
-export class CardPopup extends Component {
+ class CardPopup extends Component {
     render() {
         const { public_repos,following,followers,created_at,site_admin, name ,login } = this.props.currentUser;
         return (

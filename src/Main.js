@@ -4,7 +4,7 @@ import CardList from "./Components/CardLists/CardList/CardList";
 import Loader from './Components/Common/Loader/Loader';
 import Empty from './Components/Empty/Empty';
 
-export class Main extends Component {
+ class Main extends Component {
   constructor() {
     super();
     this.state = {
@@ -68,7 +68,7 @@ export class Main extends Component {
       this.setState({ currentUserName: userList });
       return;
     } else {
-      this.setState({ currentUserName: userList });
+      this.setState({ currentUserName: userList , showEmpty: false });
     }
   };
 
