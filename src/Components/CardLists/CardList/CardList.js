@@ -56,7 +56,7 @@ class CardList extends Component {
     return (
       <div>
         {this.state.userList && this.state.userList.length ? (
-          <div>
+          <div className="gca-card_list_wrapper">
             <span>
               <DropDown
                 sortItems={this.props.sortItems}

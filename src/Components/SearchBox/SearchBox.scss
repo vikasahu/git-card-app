@@ -1,0 +1,37 @@
+.gca-search_wrapper {
+  background-color: #f2f2f2;
+  height: 150px;
+  position: relative;
+
+  .gca-search_form {
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .gca-search_form_label {
+      display: flex;
+      align-items: center;
+
+      .gca-search_form_input {
+        width: 100%;
+        border: 3px solid #00b4cc;
+        border-right: none;
+        padding: 5px;
+        height: 20px;
+        border-radius: 5px 0 0 5px;
+        color: #01331c;
+        font-size: 16px;
+      }
+      .gca-search_form_input:focus {
+        border-color: #00b4cc;
+        outline: none !important;
+      }
+      .gca-search_form_img_btn {
+        width: 36px;
+        height: 100%;
+        cursor: pointer;
+      }
+    }
+  }
+}
