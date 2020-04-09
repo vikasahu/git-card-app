@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./CardList.scss";
 import Card from "../Card/Card";
 import CardPopup from "../CardPopup/CardPopup";
 import DropDown from "../../Common/Dropdown/Dropdown";
+import "./CardList.scss";
 
 class CardList extends Component {
   constructor(props) {
@@ -12,21 +12,17 @@ class CardList extends Component {
       userDetails: [],
       currentUser: {},
       showPopup: false,
-      sortItems: {
-        title: "Sort By",
-        listItems: [
-          {
-            name: "High to Low Score",
-            id: 0,
-          },
-          {
-            name: "Low to High Score",
-            id: 1,
-          },
-        ],
-      },
     };
   }
+
+
+  static getDerivedStateFromProps(nextProps, prevState){
+    if(nextProps.userList!==prevState.userList){
+      return { userList: nextProps.userList};
+   }
+   else return null;
+ }
+ 
 
   fetchUserDetails = async (userName) => {
     let userDetail = this.getCurrentUserDetails(userName);
@@ -55,17 +51,6 @@ class CardList extends Component {
     this.setState({ showPopup: val });
   };
 
-  sortHandler = (id) => {
-    let p = [...this.state.userList];
-    if (id === 0) {
-      // 0 means high to low
-      p.sort((a, b) => b.id - a.id);
-      this.setState({ userList: p });
-      return;
-    }
-    p.sort((a, b) => a.id - b.id);
-    this.setState({ userList: [...p] });
-  };
 
   render() {
     return (
@@ -74,8 +59,8 @@ class CardList extends Component {
           <div>
             <span>
               <DropDown
-                sortItems={this.state.sortItems}
-                sortHandler={(id) => this.sortHandler(id)}
+                sortItems={this.props.sortItems}
+                sortHandler={(id) => this.props.sortHandler(id)}
               />
             </span>
             <div className="gca-card_list">

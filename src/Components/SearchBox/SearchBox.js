@@ -15,8 +15,8 @@ export class SearchBox extends Component {
 
   handleSubmit=(event)=>{
   event.preventDefault();
-   this.props.fetchAllUsers(this.state.value);
-
+  if(!this.state.value) return
+   this.props.setCurrentUserList(this.state.value);
 }
 
 
@@ -25,7 +25,7 @@ export class SearchBox extends Component {
       <form>
         <label>
           Name:
-          <input type="text" name="name" target='_blank'  placeholder='Enter User Name...' onChange={(e)=>this.handleChange(e)}/>
+          <input type="text" name="name" target='_blank'  value={this.state.value} placeholder='Enter User Name...' onChange={(e)=>this.handleChange(e)}/>
         </label>
         <input type="submit"  value="Submit" target='_blank' onClick={(e)=>this.handleSubmit(e)}/>
       </form>
