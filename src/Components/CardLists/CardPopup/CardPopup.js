@@ -2,12 +2,22 @@ import React, { Component } from "react";
 import "./CardPopup.scss";
 
 class CardPopup extends Component {
+
+
+  getDate=()=> {
+    let newDate = new Date(this.props.currentUser.created_at);
+    let date = newDate.getFullYear()+'-'+(newDate.getMonth()+1)+'-'+newDate.getDate();
+    let time = newDate.getHours() + ":" + newDate.getMinutes() + ":" + newDate.getSeconds();
+    let dateTime = date+' '+time.toLocaleString('en-US', { hour: 'numeric', hour12: true });
+    let res = newDate.getHours() > 11  ? " pm" : " am";
+    return dateTime + res;
+  }
+
   render() {
     const {
       public_repos,
       following,
       followers,
-      created_at,
       site_admin,
       html_url,
       name,
@@ -33,7 +43,7 @@ class CardPopup extends Component {
               </div>
               <div className="gca-popup_info_wrap">
                 <div className="gca-popup_info_created">
-                  Created at {created_at}
+                  Created at {this.getDate()}
                 </div>
                 <div className="gca-popup_info">
                   <div className="gca-popup_info_item">
