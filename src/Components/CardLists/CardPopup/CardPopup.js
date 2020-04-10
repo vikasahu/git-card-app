@@ -43,7 +43,7 @@ class CardPopup extends Component {
             </div>
             <div className="gca-popup_info_wrap">
               <div className="gca-popup_info_created">
-                Created At {created_at}
+                Created at {created_at}
               </div>
               <div className="gca-popup_info">
                 <div className="gca-popup_info_item">

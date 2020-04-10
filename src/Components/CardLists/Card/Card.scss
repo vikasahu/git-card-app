@@ -15,10 +15,13 @@
     .gca-card_name {
     }
     .gca-card_avatar {
-      height: 150px;
+      height: 165px;
       .gca-card_avatar_img {
         max-width: 150px;
         height: 150px;
+        max-width: 150px;
+       margin-top: 14px;
+       border-radius: 4px;
       }
     }
   }

@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
+import './Empty.scss'
 
 function Empty() {
     return (
-        <div>
-            <div>Sorry No Result Found!</div>
-            <div>Please try different Username</div>
+        <div className='gca-empty-wrapper'>
+            <img src="./images/no_results_found.png" className='gca-empty-result' alt="no_result_found"/>
         </div>
     )
 }
