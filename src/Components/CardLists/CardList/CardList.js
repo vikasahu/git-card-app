@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Card from "../Card/Card";
 import CardPopup from "../CardPopup/CardPopup";
 import DropDown from "../../Common/Dropdown/Dropdown";
+import user from '../../../Service/users.api'
 import "./CardList.scss";
 
 class CardList extends Component {
@@ -24,7 +25,7 @@ class CardList extends Component {
   fetchUserDetails = async (userName) => {
     let userDetail = this.getCurrentUserDetails(userName);
     if (!userDetail) {
-      let response = await fetch(` https://api.github.com/users/${userName}`);
+      let response = await user.fetchCurrentUser(userName);
       let data = await response.json();
       this.setState((prevState) => ({
         userDetails: [...prevState.userDetails, data],

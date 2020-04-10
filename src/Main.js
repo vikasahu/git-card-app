@@ -3,6 +3,7 @@ import SearchBox from "./Components/SearchBox/SearchBox";
 import CardList from "./Components/CardLists/CardList/CardList";
 import Loader from "./Components/Common/Loader/Loader";
 import Empty from "./Components/Empty/Empty";
+import search from "./Service/search.api";
 
 class Main extends Component {
   constructor() {
@@ -36,9 +37,7 @@ class Main extends Component {
   fetchAllUsers = async (userName) => {
     try {
       this.setState({ showLoader: true, showEmpty: false });
-      let response = await fetch(
-        `https://api.github.com/search/users?q=${userName}`
-      );
+      let response = await search.fetchAllUser(userName);
       let data = await response.json();
       let showEmpty = false;
       if (!data.items.length) {
