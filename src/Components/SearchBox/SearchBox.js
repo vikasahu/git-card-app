@@ -1,34 +1,51 @@
 import React, { Component } from "react";
-
-export class SearchBox extends Component {
+import "./SearchBox.scss";
+class SearchBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        value: ''
+      value: "",
     };
-
   }
 
-  handleChange= (event)=> {
-    this.setState({value: event.target.value});
-  }
+  handleChange = (event) => {
+    this.setState({ value: event.target.value });
+  };
 
-  handleSubmit=(event)=>{
-  event.preventDefault();
-   this.props.fetchAllUsers(this.state.value);
-
-}
-
+  handleSubmit = (event) => {
+    event.preventDefault();
+    if (!this.state.value) return;
+    this.props.setCurrentUserList(this.state.value);
+    this.setState({ value: ''});
+  };
 
   render() {
     return (
-      <form>
-        <label>
-          Name:
-          <input type="text" name="name" target='_blank'  placeholder='Enter User Name...' onChange={(e)=>this.handleChange(e)}/>
-        </label>
-        <input type="submit"  value="Submit" target='_blank' onClick={(e)=>this.handleSubmit(e)}/>
-      </form>
+      <div className="gca-search_wrapper">
+        <form
+          onSubmit={(e) => this.handleSubmit(e)}
+          className="gca-search_form"
+          autoComplete="off"
+        >
+          <div className="gca-search_form_label">
+            <input
+              className="gca-search_form_input"
+              type="text"
+              name="name"
+              target="_blank"
+              value={this.state.value}
+              placeholder="Enter User Name..."
+              onChange={(e) => this.handleChange(e)}
+            />
+            <img
+              src="./images/icons8-search.svg"
+              className="gca-search_form_img_btn"
+              alt="img"
+              onClick={(e) => this.handleSubmit(e)}
+            />
+          </div>
+        </form>
+      </div>
     );
   }
 }
