@@ -38,7 +38,7 @@ class SearchBox extends Component {
               onChange={(e) => this.handleChange(e)}
             />
             <img
-              src="/images/icons8-search.svg"
+              src="./images/icons8-search.svg"
               className="gca-search_form_img_btn"
               alt="img"
               onClick={(e) => this.handleSubmit(e)}
