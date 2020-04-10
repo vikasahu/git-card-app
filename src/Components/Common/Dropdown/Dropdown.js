@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import './Dropdown.scss'
  class Dropdown extends Component {
     constructor(){
         super();
@@ -16,12 +16,14 @@ import React, { Component } from 'react'
         return p.name
     }
     handleSort=(id)=>{
-        this.props.sortHandler(id);
+        if(id!==this.props.sortItems.currentSortId){
+            this.props.sortHandler(id);
+        }
         this.handleDropDown();
     }
     render() {
         return (
-            <div className='gca-dropdown_wrapper'>
+            <div className='gca-dropdown_wrapper gca-card_list_items'>
                 <div className="gca-dropdown_head" onClick={()=> this.handleDropDown()}>{this.getCurrentSort()}</div>
                 {this.state.showDropdown ? <div className='gca-dropdown_list'>
                     {this.props.sortItems.listItems.map(l => {

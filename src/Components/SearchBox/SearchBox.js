@@ -16,6 +16,7 @@ class SearchBox extends Component {
     event.preventDefault();
     if (!this.state.value) return;
     this.props.setCurrentUserList(this.state.value);
+    this.setState({ value: ''});
   };
 
   render() {

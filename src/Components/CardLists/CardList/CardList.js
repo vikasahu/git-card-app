@@ -57,12 +57,14 @@ class CardList extends Component {
       <div>
         {this.state.currentUserName.userList && this.state.currentUserName.userList.length ? (
           <div className="gca-card_list_wrapper">
-            <span>
+            <div className="gca-card_list_wrapper_details">
+            <div className='gca-card_list_wrapper_result gca-card_list_items'>Search Results({this.state.currentUserName.userList.length}+)</div>
+            <div className="gca-card_list_wrapper_username gca-card_list_items">Username Searched - {this.state.currentUserName.name}</div>
               <DropDown
                 sortItems={this.props.sortItems}
                 sortHandler={(id) => this.props.sortHandler(id)}
               />
-            </span>
+              </div>
             <div className="gca-card_list">
               {this.state.currentUserName.userList.map((user) => (
                 <Card
