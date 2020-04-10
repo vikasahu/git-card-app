@@ -53,14 +53,16 @@ class CardList extends Component {
 
 
   render() {
+    const userLen = this.state.currentUserName.userList.length
+    
     return (
       <div>
-        {this.state.currentUserName.userList && this.state.currentUserName.userList.length ? (
+        {this.state.currentUserName.userList && userLen ? (
           <div className="gca-card_list_wrapper">
             <div className="gca-card_list_drop_card_wrap">
             <div className="gca-card_list_wrapper_details">
-            <div className='gca-card_list_wrapper_result gca-card_list_items'>Search Results({this.state.currentUserName.userList.length}+)</div>
-            <div className="gca-card_list_wrapper_username gca-card_list_items">Username Searched - {this.state.currentUserName.name}</div>
+        <div className='gca-card_list_wrapper_result gca-card_list_items'>Search Results({userLen ===30 ?'30+':userLen})</div>
+            <div className="gca-card_list_wrapper_username gca-card_list_items">Username Searched - <strong>{this.state.currentUserName.name}</strong></div>
               <DropDown
                 sortItems={this.props.sortItems}
                 sortHandler={(id) => this.props.sortHandler(id)}

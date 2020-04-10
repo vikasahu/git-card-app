@@ -10,6 +10,24 @@
       justify-content: space-around;
       height: 55px;
       align-items: center;
+      border-bottom: 2px dashed #b7b7b7;
+      margin-bottom: 13px;
+      border-top: 2px dashed #b7b7b7;
+      margin-top: 13px;
+      border-radius: 14px;
+      border-left: 7px dashed #b7b7b7;
+      border-left-style: double;
+      border-right: 7px dashed #b7b7b7;
+      border-right-style: double;
+      font-family: 'Cambay', sans-serif;
+
+      @media screen and (max-width: 1024px) {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      @media screen and (max-width: 540px) {
+        height: 90px;
+      }
 
       .gca-card_list_wrapper_result {
         width: 33.3%;

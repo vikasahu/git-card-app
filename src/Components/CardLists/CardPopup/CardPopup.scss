@@ -22,6 +22,10 @@
   transform: translate(-50%, 0);
   box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
   border-radius: 2px;
+  @media screen and (max-width: 540px) {
+   min-width: 0;
+   width: 75%;
+  }
 
   .gca-popup_img {
     height: 50%;
@@ -63,11 +67,14 @@
         margin-top: 15px;
         .gca-popup_info_created {
           margin-top: 10px;
-          padding: 5px 0;
+          padding: 5px 0 3px 0;
           border: 1px solid;
           border-left: none;
           border-right: none;
           border-bottom: none;
+
+          font-family: 'Cambay', sans-serif;
+          line-height: 1;
         }
         .gca-popup_info {
           display: flex;
@@ -86,6 +93,8 @@
               all: initial;
               * {
                 all: unset;
+                font-family: 'Cambay', sans-serif;
+                 line-height: 1;
               }
 
               font-size: 18px;
