@@ -15,14 +15,11 @@ class CardList extends Component {
     };
   }
 
-
-  static getDerivedStateFromProps(nextProps, prevState){
-    if(nextProps.userList!==prevState.currentUserName){
-      return { currentUserName: nextProps.userList};
-   }
-   else return null;
- }
- 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.userList !== prevState.currentUserName) {
+      return { currentUserName: nextProps.userList };
+    } else return null;
+  }
 
   fetchUserDetails = async (userName) => {
     let userDetail = this.getCurrentUserDetails(userName);
@@ -51,47 +48,47 @@ class CardList extends Component {
     this.setState({ showPopup: val });
   };
 
-
   render() {
-    const userLen = this.state.currentUserName.userList.length
-    
+    const userLen = this.state.currentUserName.userList.length;
+
     return (
       <div>
         {this.state.currentUserName.userList && userLen ? (
           <div className="gca-card_list_wrapper">
             <div className="gca-card_list_drop_card_wrap">
-            <div className="gca-card_list_wrapper_details">
-        <div className='gca-card_list_wrapper_result gca-card_list_items'>Search Results({userLen ===30 ?'30+':userLen})</div>
-            <div className="gca-card_list_wrapper_username gca-card_list_items">Username Searched - <strong>{this.state.currentUserName.name}</strong></div>
-              <DropDown
-                sortItems={this.props.sortItems}
-                sortHandler={(id) => this.props.sortHandler(id)}
-              />
-              </div>
-            <div className="gca-card_list">
-              {this.state.currentUserName.userList.map((user) => (
-                <Card
-                  user={user}
-                  key={user.id}
-                  handleUserDetail={(userName, val) =>
-                    this.handleUserDetail(userName, val)
-                  }
+              <div className="gca-card_list_wrapper_details">
+                <div className="gca-card_list_wrapper_result gca-card_list_items">
+                  Search Results({userLen === 30 ? "30+" : userLen})
+                </div>
+                <div className="gca-card_list_wrapper_username gca-card_list_items">
+                  Username Searched -{" "}
+                  <strong>{this.state.currentUserName.name}</strong>
+                </div>
+                <DropDown
+                  sortItems={this.props.sortItems}
+                  sortHandler={(id) => this.props.sortHandler(id)}
                 />
-              ))}
-            </div>
+              </div>
+              <div className="gca-card_list">
+                {this.state.currentUserName.userList.map((user) => (
+                  <Card
+                    user={user}
+                    key={user.id}
+                    handleUserDetail={(userName, val) =>
+                      this.handleUserDetail(userName, val)
+                    }
+                  />
+                ))}
+              </div>
             </div>
             {this.state.showPopup ? (
               <CardPopup
                 currentUser={this.state.currentUser}
                 handlePopup={(val) => this.handlePopup(val)}
               />
-            ) : (
-              <div></div>
-            )}
+            ) : null}
           </div>
-        ) : (
-          ""
-        )}
+        ) : null}
       </div>
     );
   }

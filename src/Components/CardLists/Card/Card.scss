@@ -1,27 +1,29 @@
-  .gca-card {
-    background-color: #f2f2f2;
-    border: 1px solid black;
-    width: 25.33%;
-    min-width: 180px;
-    margin: auto;
-    margin-bottom: 40px;
-    cursor: pointer;
-    border: 1px solid #e2eaf0;
-    border-radius: 4px;
-    transition: 0.2s all ease-in;
-    &:hover{
-      box-shadow: 0 8px 14px 0 #bfcfdc;
-    }
-    .gca-card_name {
-    }
-    .gca-card_avatar {
-      height: 165px;
-      .gca-card_avatar_img {
-        max-width: 150px;
-        height: 150px;
-        max-width: 150px;
-       margin-top: 14px;
-       border-radius: 4px;
-      }
+.gca-card {
+  background-color: #f2f2f2;
+  border: 1px solid black;
+  width: 25.33%;
+  min-width: 180px;
+  margin: auto;
+  margin-bottom: 40px;
+  cursor: pointer;
+  border: 1px solid #e2eaf0;
+  border-radius: 4px;
+  transition: 0.2s all ease-in;
+  &:hover {
+    box-shadow: 0 8px 14px 0 #bfcfdc;
+  }
+  .gca-card_name {
+    font-weight: 600;
+    margin-top: 6px;
+  }
+  .gca-card_avatar {
+    height: 165px;
+    .gca-card_avatar_img {
+      max-width: 150px;
+      height: 150px;
+      max-width: 150px;
+      margin-top: 14px;
+      border-radius: 4px;
     }
   }
+}

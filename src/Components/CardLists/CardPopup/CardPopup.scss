@@ -20,24 +20,29 @@
   z-index: 99999;
   left: 50%;
   transform: translate(-50%, 0);
-  box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
+  box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2),
+    0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
   border-radius: 2px;
+  border: 1px solid #5b98ab;
+  border-radius: 4px;
+  transition: 0.2s all ease-in;
   @media screen and (max-width: 540px) {
-   min-width: 0;
-   width: 75%;
+    min-width: 0;
+    width: 75%;
   }
 
   .gca-popup_img {
     height: 50%;
-    background: #82d2eba3;
+    background: #5b98ab;
     position: relative;
+    border-radius: 4px;
   }
-  .gca-popup_admin{
+  .gca-popup_admin {
     position: absolute;
     top: 10px;
     left: 6px;
     background: #4a2071;
-    color: #82d2eba3;
+    color: #5b98ab;
     padding: 2px 10px;
     font-weight: 700;
     border-radius: 6px;
@@ -73,7 +78,7 @@
           border-right: none;
           border-bottom: none;
 
-          font-family: 'Cambay', sans-serif;
+          font-family: "Cambay", sans-serif;
           line-height: 1;
         }
         .gca-popup_info {
@@ -93,8 +98,8 @@
               all: initial;
               * {
                 all: unset;
-                font-family: 'Cambay', sans-serif;
-                 line-height: 1;
+                font-family: "Cambay", sans-serif;
+                line-height: 1;
               }
 
               font-size: 18px;
@@ -120,5 +125,9 @@
     font-size: 32px;
     font-weight: 900;
     color: #464646;
+    transition: 0.2s all ease-in;
+    &:hover {
+      color: black;
+    }
   }
 }

@@ -3,7 +3,7 @@
 
   .gca-card_list_drop_card_wrap {
     @media screen and (min-width: 1024px) {
-        margin: 0 100px;
+      margin: 0 100px;
     }
     .gca-card_list_wrapper_details {
       display: flex;
@@ -19,7 +19,7 @@
       border-left-style: double;
       border-right: 7px dashed #b7b7b7;
       border-right-style: double;
-      font-family: 'Cambay', sans-serif;
+      font-family: "Cambay", sans-serif;
 
       @media screen and (max-width: 1024px) {
         margin-left: 10px;
@@ -47,6 +47,8 @@
     .gca-card_list {
       display: flex;
       flex-wrap: wrap;
+      font-family: "Cambay", sans-serif;
+      line-height: 1.2;
     }
   }
 }

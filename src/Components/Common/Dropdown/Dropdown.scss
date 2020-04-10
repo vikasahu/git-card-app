@@ -1,15 +1,14 @@
+.gca-dropdown_list {
+  position: absolute;
+  height: 38px;
+  right: 13%;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  margin-top: 4px;
 
-.gca-dropdown_list{
-    position: absolute;
-    height: 38px;
-    right: 13%;
-    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
-    cursor: pointer;
-    margin-top: 4px;
-    
-    .gca-dropdown_listItems{
-
-        background: #fff;
+  .gca-dropdown_listItems {
+    background: #fff;
     color: rgba(0, 0, 0, 0.87);
     width: 140px;
     padding: 0 16px;
@@ -19,40 +18,37 @@
     justify-content: center;
     font-size: 16px;
     padding-bottom: 1px;
-    
 
-        // background: transparent ;
+    // background: transparent ;
     transition: 1s ease;
 
-
-&:hover{
-    background: #d8d8d8;
-    // color: #00b4cc !important;
-
-}
+    &:hover {
+      background: #d8d8d8;
+      // color: #00b4cc !important;
     }
+  }
 }
 
-.gca-dropdown_head{
-    // background: transparent;
-    // color: #00b4cc!important;
-    // border-radius: 4px;
-    // border: 0.5px solid #00b4cc;
-    // padding: 1px 5px;
-    // color: #00b4cc !important;
-    // box-shadow: unset !important;
-    position: relative;
-    cursor: pointer;
-    display: inline;
-    border-radius: 4px;
-    border: 0.5px solid #b9ecf3;
-    padding: 3px 5px 1px 5px;
-    color: #00b4cc !important;
-    box-shadow: unset !important;
-    background: transparent ;
-    font-size: 16px;
+.gca-dropdown_head {
+  // background: transparent;
+  // color: #00b4cc!important;
+  // border-radius: 4px;
+  // border: 0.5px solid #00b4cc;
+  // padding: 1px 5px;
+  // color: #00b4cc !important;
+  // box-shadow: unset !important;
+  position: relative;
+  cursor: pointer;
+  display: inline;
+  border-radius: 4px;
+  border: 0.5px solid #b9ecf3;
+  padding: 3px 5px 1px 5px;
+  color: #00b4cc !important;
+  box-shadow: unset !important;
+  background: transparent;
+  font-size: 16px;
 
-&:hover{
+  &:hover {
     background: #f2fdff;
-}
+  }
 }

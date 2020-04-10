@@ -120,7 +120,7 @@ class Main extends Component {
       <div>
         <SearchBox setCurrentUserList={this.setCurrentUserList} />
 
-        {this.state.showLoader ? <Loader /> : ""}
+        {this.state.showLoader ? <Loader /> : null}
         {this.state.currentUserName &&
         !this.state.showLoader &&
         this.state.currentUserName.userList &&
@@ -131,9 +131,9 @@ class Main extends Component {
             sortItems={this.state.sortItems}
           />
         ) : (
-          ""
+          null
         )}
-        {this.state.showEmpty ? <Empty /> : ""}
+        {this.state.showEmpty ? <Empty /> : null}
       </div>
     );
   }
