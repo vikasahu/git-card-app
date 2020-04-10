@@ -34,7 +34,7 @@ class SearchBox extends Component {
               name="name"
               target="_blank"
               value={this.state.value}
-              placeholder="Enter User Name..."
+              placeholder="Enter Github Username..."
               onChange={(e) => this.handleChange(e)}
             />
             <img
