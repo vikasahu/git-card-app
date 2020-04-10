@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "779a55caf4a1ced447674ed1b4e61cb8",
+    "revision": "0b6555f3fbc68068be78628416993533",
     "url": "/git-card-app/index.html"
   },
   {
-    "revision": "77255f9b3af610221dd0",
-    "url": "/git-card-app/static/css/main.57188492.chunk.css"
+    "revision": "b541338d12fb7eebd986",
+    "url": "/git-card-app/static/css/main.7466bd73.chunk.css"
   },
   {
     "revision": "ec9fb869bb09e0c8ca99",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/git-card-app/static/js/2.bb1c7482.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "77255f9b3af610221dd0",
-    "url": "/git-card-app/static/js/main.cf091627.chunk.js"
+    "revision": "b541338d12fb7eebd986",
+    "url": "/git-card-app/static/js/main.ebcfcfd0.chunk.js"
   },
   {
     "revision": "362e1fce27dc97d94edd",
