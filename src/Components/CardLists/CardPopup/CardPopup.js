@@ -33,6 +33,7 @@ class CardPopup extends Component {
         <div className="gca-overlay"></div>
         <div className="gca-popup">
           <div className="gca-popup_img"></div>
+           {site_admin ? '': <div className="gca-popup_admin">ADMIN</div>}
           <div className="gca-popup_cont_wrap">
             <div className="gca-popup_cont_wrap_tr">
             <div className="gca-popup_cont">

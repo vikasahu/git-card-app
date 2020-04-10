@@ -1,7 +1,8 @@
   .gca-card {
-    background-color: antiquewhite;
+    background-color: #f2f2f2;
     border: 1px solid black;
     width: 25.33%;
+    min-width: 180px;
     margin: auto;
     margin-bottom: 40px;
     cursor: pointer;
@@ -14,9 +15,9 @@
     .gca-card_name {
     }
     .gca-card_avatar {
+      height: 150px;
       .gca-card_avatar_img {
         max-width: 150px;
-        max-height: 150px;
         height: 150px;
       }
     }

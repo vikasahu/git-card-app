@@ -57,6 +57,7 @@ class CardList extends Component {
       <div>
         {this.state.currentUserName.userList && this.state.currentUserName.userList.length ? (
           <div className="gca-card_list_wrapper">
+            <div className="gca-card_list_drop_card_wrap">
             <div className="gca-card_list_wrapper_details">
             <div className='gca-card_list_wrapper_result gca-card_list_items'>Search Results({this.state.currentUserName.userList.length}+)</div>
             <div className="gca-card_list_wrapper_username gca-card_list_items">Username Searched - {this.state.currentUserName.name}</div>
@@ -75,6 +76,7 @@ class CardList extends Component {
                   }
                 />
               ))}
+            </div>
             </div>
             {this.state.showPopup ? (
               <CardPopup
