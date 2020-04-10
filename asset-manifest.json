@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/git-card-app/static/css/main.349bc5d5.chunk.css",
-    "main.js": "/git-card-app/static/js/main.cbaa07f5.chunk.js",
-    "main.js.map": "/git-card-app/static/js/main.cbaa07f5.chunk.js.map",
+    "main.css": "/git-card-app/static/css/main.93ee0a37.chunk.css",
+    "main.js": "/git-card-app/static/js/main.d4c90a3f.chunk.js",
+    "main.js.map": "/git-card-app/static/js/main.d4c90a3f.chunk.js.map",
     "runtime-main.js": "/git-card-app/static/js/runtime-main.86a25078.js",
     "runtime-main.js.map": "/git-card-app/static/js/runtime-main.86a25078.js.map",
     "static/js/2.10c76fb3.chunk.js": "/git-card-app/static/js/2.10c76fb3.chunk.js",
     "static/js/2.10c76fb3.chunk.js.map": "/git-card-app/static/js/2.10c76fb3.chunk.js.map",
     "index.html": "/git-card-app/index.html",
-    "precache-manifest.ab5126c342f1f40a0ceb03f62a3ceb6a.js": "/git-card-app/precache-manifest.ab5126c342f1f40a0ceb03f62a3ceb6a.js",
+    "precache-manifest.ff3fd8e44d7dde068c82ea0efec3157d.js": "/git-card-app/precache-manifest.ff3fd8e44d7dde068c82ea0efec3157d.js",
     "service-worker.js": "/git-card-app/service-worker.js",
-    "static/css/main.349bc5d5.chunk.css.map": "/git-card-app/static/css/main.349bc5d5.chunk.css.map",
+    "static/css/main.93ee0a37.chunk.css.map": "/git-card-app/static/css/main.93ee0a37.chunk.css.map",
     "static/js/2.10c76fb3.chunk.js.LICENSE.txt": "/git-card-app/static/js/2.10c76fb3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.86a25078.js",
     "static/js/2.10c76fb3.chunk.js",
-    "static/css/main.349bc5d5.chunk.css",
-    "static/js/main.cbaa07f5.chunk.js"
+    "static/css/main.93ee0a37.chunk.css",
+    "static/js/main.d4c90a3f.chunk.js"
   ]
 }
