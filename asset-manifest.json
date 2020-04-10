@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/git-card-app/static/css/main.57188492.chunk.css",
+    "main.js": "/git-card-app/static/js/main.d9aaea60.chunk.js",
+    "main.js.map": "/git-card-app/static/js/main.d9aaea60.chunk.js.map",
+    "runtime-main.js": "/git-card-app/static/js/runtime-main.86a25078.js",
+    "runtime-main.js.map": "/git-card-app/static/js/runtime-main.86a25078.js.map",
+    "static/js/2.bb1c7482.chunk.js": "/git-card-app/static/js/2.bb1c7482.chunk.js",
+    "static/js/2.bb1c7482.chunk.js.map": "/git-card-app/static/js/2.bb1c7482.chunk.js.map",
+    "index.html": "/git-card-app/index.html",
+    "precache-manifest.759b318736a67a7c0e854af4021b319a.js": "/git-card-app/precache-manifest.759b318736a67a7c0e854af4021b319a.js",
+    "service-worker.js": "/git-card-app/service-worker.js",
+    "static/css/main.57188492.chunk.css.map": "/git-card-app/static/css/main.57188492.chunk.css.map",
+    "static/js/2.bb1c7482.chunk.js.LICENSE.txt": "/git-card-app/static/js/2.bb1c7482.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.86a25078.js",
+    "static/js/2.bb1c7482.chunk.js",
+    "static/css/main.57188492.chunk.css",
+    "static/js/main.d9aaea60.chunk.js"
+  ]
+}
