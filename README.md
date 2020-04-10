@@ -21,7 +21,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
 
-### Note about sorting option
+### Note about live project
 
-Currently sorting is based on id and not on score (as score is coming same for almost all users)
+Github api has limited number of request.If you will reload/refresh frequently, it will block the request and the api will fail. So in live project you may see it not working properly. So better option is you clone this repo and then run to your local.
 
+### Note about sorting option and admin flag
+
+Currently sorting is based on id and not on score (as score is coming same for almost all users).
+For admin flag - search for "scottdensmore" and then there you will see a profile with admin flag.
