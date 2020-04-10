@@ -39,7 +39,7 @@ class CardPopup extends Component {
                   <div className="gca-popup_info_item">
                     <div className="gca-popup_info_count">{public_repos}</div>
                     <div className="gca-popup_info_head">
-                      <a href={html_url + "?tab=repositories"} target="_blank">
+                      <a href={html_url + "?tab=repositories"} target="_blank" rel="noopener noreferrer">
                         Repo
                       </a>
                     </div>
@@ -47,7 +47,7 @@ class CardPopup extends Component {
                   <div className="gca-popup_info_item gca-popup_info_item_c">
                     <div className="gca-popup_info_count">{followers}</div>
                     <div className="gca-popup_info_head">
-                      <a href={html_url + "/followers"} target="_blank">
+                      <a href={html_url + "/followers"} target="_blank" rel="noopener noreferrer">
                         Followers
                       </a>
                     </div>
@@ -55,7 +55,7 @@ class CardPopup extends Component {
                   <div className="gca-popup_info_item">
                     <div className="gca-popup_info_count">{following}</div>
                     <div className="gca-popup_info_head">
-                      <a href={html_url + "/following"} target="_blank">
+                      <a href={html_url + "/following"} target="_blank" rel="noopener noreferrer">
                         Following
                       </a>
                     </div>
